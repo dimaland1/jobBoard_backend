@@ -1,0 +1,10 @@
+{
+    "email": "jalal.azouzout@example.com",
+    "password": "123456",
+    "userType" : "candidate"
+}
+
+{
+    "message": "Connexion réussie",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlclR5cGUiOiJjYW5kaWRhdGUiLCJpYXQiOjE3MTUyNjYxMjIsImV4cCI6MTcxNTM1MjUyMn0.Due3J5tGY-uo8VWgKkuhIXWvFr27eS9UqdsWZ6IEInA"
+}
