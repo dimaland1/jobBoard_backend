@@ -74,18 +74,3 @@ ALTER TABLE `applications` ADD FOREIGN KEY (`job_offer_id`) REFERENCES `job_offe
 ALTER TABLE `feedbacks` ADD FOREIGN KEY (`application_id`) REFERENCES `applications` (`id`);
 ALTER TABLE `feedbacks` ADD FOREIGN KEY (`employeur_id`) REFERENCES `Employer` (`id`);
 ALTER TABLE `feedbacks` ADD FOREIGN KEY (`candidat_id`) REFERENCES `Candidate` (`id`);
-
-INSERT INTO Candidate (name, first_name, nationality, birth_date, phone, email, city, CV_Link, comments, password_hash)
-VALUES ('Doe', 'John', 'Français', '1992-06-15', '1234567890', 'john.doe@example.com', 'Paris', 'http://example.com/cv/johndoe', 'Aucun commentaire.', 'hashmotdepasse');
-
-INSERT INTO Employer (phone, email, city, company_name, password_hash)
-VALUES ('0987654321', 'hr@company.com', 'Lyon', 'Compagnie XYZ', 'autrehash');
-
-INSERT INTO job_offers (employer_id, title, description, target_job, period, remuneration, location, status)
-VALUES (1, 'Développeur Web', 'Recherche développeur web expérimenté en JavaScript.', 'Développement', '6 mois', 3500.00, 'Lyon', 'Ouvert');
-
-INSERT INTO applications (candidate_id, job_offer_id, application_date, motivation_letter_link, status)
-VALUES (1, 1, '2024-05-08', 'http://example.com/motivation/johndoe', 'En attente');
-
-INSERT INTO feedbacks (application_id, employeur_id, candidat_id, comment)
-VALUES (1, 1, 1, 'Excellent candidat');
