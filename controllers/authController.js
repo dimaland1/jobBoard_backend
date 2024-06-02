@@ -118,7 +118,7 @@ exports.loginUser = (req, res) => {
             if (match) {
                 const token = jwt.sign({ id: user.id, userType }, JWT_SECRET, { expiresIn: '24h' });
                 console.log("name", user)
-                res.json({ nom_utilisateur: user.name, token : token });
+                res.json({ nom_utilisateur: user.name, token : token, logo_url: user.logo_url });
             } else {
                 res.status(401).send('Mot de passe incorrect');
             }

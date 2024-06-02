@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
+const bcrypt = require('bcrypt');
 
 // ajouter cors
 const cors = require('cors');
@@ -23,5 +24,5 @@ app.use('/apply', applyRoutes);
 
 const PORT = 3020;
 app.listen(PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${PORT}`);
+    console.log(`Serveur démarré sur http://192.168.56.1:${PORT}`);
 });

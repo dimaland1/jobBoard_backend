@@ -4,7 +4,7 @@ const jobOffersController = require('../controllers/jobOffersController');
 const verifyEmployer = require('../middleware/authMiddleware');
 
 // route post pour creer une offre d'emploi
-router.post('/', verifyEmployer, jobOffersController.createJobOffer); 
+router.post('/', jobOffersController.createJobOffer); 
 
 // route get qui retourne toutes les offres d'emploi
 router.get('/', jobOffersController.getAllJobOffers);
@@ -24,5 +24,7 @@ router.delete('/:id', jobOffersController.deleteJobOffer);
 // Voir les candidatures pour une offre spécifique
 //router.get("/:id/applications");
 
+// route get qui retourne les offres d'emploi d'un employeur
+router.get('/employer/:id', jobOffersController.getJobOffersByEmployer);
 
 module.exports = router;

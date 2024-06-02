@@ -1,23 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const employerController = require('../controllers/applyController');
+const applyController = require('../controllers/applyController');
 const verifyEmployer = require('../middleware/authMiddleware');
 
 
 // route post pour creer une candidature
-router.post('/applications', employerController.createApplication);
+router.post('/', applyController.createApplication);
 
 // route get qui retoure toutes les candidatures d'un offre d'emploi
-router.get('/applications/job/:id', employerController.getApplicationsByJobOfferId);
+router.get('/job/:id', applyController.getApplicationsByJobOfferId);
 
 // route post pour mettre a jour le status d'une candidature
-router.put('/applications/update-status/:id', employerController.updateApplicationStatus);
+router.put('/update-status/:id', applyController.updateApplicationStatus);
 
 // route put pour mettre a jour le commentaire d'une candidature
-router.put('/applications/update-comment/:id', employerController.updateApplicationComment);
+router.put('/update-comment/:id', applyController.updateApplicationComment);
 
 // route get qui retourne toutes les candidatures d'un candidat
-router.get('/applications/candidate/:id', employerController.getApplicationsByCandidateId);
-
+router.get('/candidate/:id', applyController.getApplicationsByCandidateId);
 
 module.exports = router;
